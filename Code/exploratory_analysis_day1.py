@@ -23,3 +23,4 @@ plt.show()
 #   We could measure how quickly the virus is spreading by calculating the growth rate of active cases over time. This can be done by taking the difference in active cases between consecutive days and dividing it by the number of active cases on the previous day to get a percentage growth rate. 
 # What information about the virus would be helpful in determining the shape of the outbreak curve?
 #   Information about the virus's transmission rate, incubation period, and recovery time would be helpful in determining the shape of the outbreak curve.
+# %%
