@@ -153,7 +153,7 @@ plt.show()
 # -------------------------------
 # Predict the future peak
 # -------------------------------
-future_days = 200
+future_days = 120
 future_timepoints = np.arange(timepoints[0], timepoints[0] + future_days + 1, 1)
 
 S_future, E_future, I_future, R_future = euler_seir(
