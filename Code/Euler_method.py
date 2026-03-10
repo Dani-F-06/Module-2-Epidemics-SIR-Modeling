@@ -46,7 +46,7 @@ infected_data = data[case_col].to_numpy()
 # -------------------------------
 # Initial conditions
 # -------------------------------
-N = 10000           # change if your assignment gives a different population
+N = 10000          
 I0 = infected_data[0]
 E0 = I0             # reasonable first guess: exposed starts similar to infected
 R0_init = 0         # initial recovered
