@@ -179,3 +179,47 @@ plt.ylabel('Population')
 plt.title('SEIR Future Prediction')
 plt.legend()
 plt.show()
+
+
+# Plot future prediction with actual data from release 3
+
+# Loading data from data release 3
+data_3 = pd.read_csv(r'/Users/saraelster/Desktop/UVA/Computational BME/Module 2/Module-2-Epidemics-SIR-Modeling/Data/mystery_virus_daily_active_counts_RELEASE#3.csv', parse_dates=['date'], header=0, index_col=None)
+
+x_data_actual = data_3['day'].values.astype(float)
+y_data_actual = data_3['active reported daily cases'].values.astype(float)
+
+# Plotting full dataset against SEIR model
+plt.figure(figsize=(8, 5))
+plt.plot(future_timepoints, I_future, label='Predicted I(t)')
+plt.scatter(peak_day, peak_value, label=f'Peak: day {peak_day}, I = {peak_value:.2f}')
+plt.scatter(x_data_actual, y_data_actual, label = "Actual Data")
+plt.xlabel('Day')
+plt.ylabel('Population')
+plt.title('SEIR Future Prediction')
+plt.legend()
+plt.show()
+
+
+# Estimating error
+
+# Finding actual peak value and day from data release 3
+actual_peak_value = 0
+actual_peak_day = 0
+for num in range(len(y_data_actual)):
+    if y_data_actual[num] > actual_peak_value:
+        actual_peak_value = y_data_actual[num]
+        actual_peak_day = x_data_actual[num]
+
+# Calculating true error for value and day
+true_error_value = actual_peak_value - peak_value
+true_error_day = actual_peak_day - peak_day
+print("True error for peak number of cases:", round(true_error_value, 2))
+print("True error value for peak day:", true_error_day)
+
+# Calculating percent error
+rel_error_value = (true_error_value/actual_peak_value)*100
+rel_error_day = (true_error_day/actual_peak_day)*100
+print("Relative (%) error for peak number if cases: " + str(round(rel_error_value, 2)) + "%")
+print("Relative (%) error for peak day: " + str(round(rel_error_day, 2)) + "%")
+
