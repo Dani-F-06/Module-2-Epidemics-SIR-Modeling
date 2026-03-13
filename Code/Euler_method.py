@@ -223,3 +223,15 @@ rel_error_day = (true_error_day/actual_peak_day)*100
 print("Relative (%) error for peak number if cases: " + str(round(rel_error_value, 2)) + "%")
 print("Relative (%) error for peak day: " + str(round(rel_error_day, 2)) + "%")
 
+
+# Intervention strategy 1: Masking Mandates (starting at day 70) - reduces transmission by 40%
+new_beta = 0.4 * best_beta
+
+
+
+
+# Intervention strategy 2: Testing/Quarantine (starting at day 70) - reduces infectious period by 2 days
+
+
+
+# Intervention strategy 3: 2 week school closure (starting at day 70) - day 70-84 - 20% normal contacts; day 84-120 - normal contacts
