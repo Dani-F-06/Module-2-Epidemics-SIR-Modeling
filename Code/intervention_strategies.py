@@ -4,12 +4,11 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 # Loading data from data release 3
-data_3 = pd.read_csv(r'Data/mystery_virus_daily_active_counts_RELEASE#3.csv', parse_dates=['date'], header=0, index_col=None)
+data_3 = pd.read_csv(r'/Users/saraelster/Desktop/UVA/Computational BME/Module 2/Module-2-Epidemics-SIR-Modeling/Data/mystery_virus_daily_active_counts_RELEASE#3.csv', parse_dates=['date'], header=0, index_col=None)
 
 x_data_actual = data_3['day'].values.astype(float)
 y_data_actual = data_3['active reported daily cases'].values.astype(float)
 
-<<<<<<< Updated upstream
 # Best values for beta, sigma, and gamma from Euler calculation
 best_beta = 0.25172413793103443
 best_sigma = 0.4854166666666666
@@ -86,13 +85,3 @@ plt.show()
 
 
 # Intervention strategy 3: 2 week school closure (starting at day 70) - day 70-84 - 20% normal contacts; day 84-120 - normal contacts
-=======
-# Plotting full dataset against SEIR model
-plt.figure(figsize=(8, 5))
-plt.scatter(x_data_actual, y_data_actual, label = "Actual Data")
-plt.xlabel('Day')
-plt.ylabel('Population')
-plt.title('SEIR Future Prediction')
-plt.legend()
-plt.show()
->>>>>>> Stashed changes
