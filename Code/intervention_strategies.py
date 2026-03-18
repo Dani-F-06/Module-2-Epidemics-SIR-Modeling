@@ -270,8 +270,7 @@ intervention_metrics('2-week school closure', S_close, I_close, S_post_base, I_p
 # Plot all interventions vs baseline
 # -----------------------------
 plt.figure(figsize=(10, 6))
-plt.plot(timepoints, I_fit, color="orange")
-plt.plot(timepoints_post70, I_post_base, label='Baseline', color="orange")
+plt.plot(timepoints_full, I_base, label='Baseline')
 plt.plot(timepoints_post70, I_mask, label='Masking mandate')
 plt.plot(timepoints_post70, I_vax_campaign, label='Vaccine campaign')
 plt.plot(timepoints_post70, I_vax_rollout, label='Vaccine rollout')
