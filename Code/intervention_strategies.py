@@ -9,9 +9,9 @@ x_data_actual = data_3['day'].values.astype(float)
 y_data_actual = data_3['active reported daily cases'].values.astype(float)
 
 # Best values for beta, sigma, and gamma from Euler calculation
-best_beta = 0.25172413793103443
-best_sigma = 0.4854166666666666
-best_gamma = 0.07291666666666667
+best_beta = 0.3275862068965517
+best_sigma = 0.5770833333333334
+best_gamma = 0.14166666666666666
 
 # VT Infection Day 0-70
 def euler_seir(timepoints, N, S0, E0, I0, R0, beta, sigma, gamma):
